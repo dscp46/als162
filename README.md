@@ -48,3 +48,7 @@ Major alarm
 Minor alarm
   - Happens when no valid PPS signal is received
   - This condition can self-clear once continuous operation has been established.
+
+## Serial Protocol Specification
+
+Described in the the following document: [protocol specification](doc/proto.md)
