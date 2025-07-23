@@ -3,6 +3,8 @@
 This project will refresh F5RCT's time signal receiver[^1], frequency standard, using the 162kHz French legal time signal[^3], [^4].
 Comments from Hervé QUILLEVERE[^2] have also been taken in account, during the development of this project.
 
+Henning Maier has written an interesting paper for GRcon23[^5]. In the associated presentation, the author [quickly covers the unspecified part of the signal](https://www.youtube.com/watch?v=tjkMXNVhhnU&t=126). On top of his remarks, that containing the current second number, it appears this part contains an equal amount of positive and negative phase symbols, such that the average phase stays near zero. Further work needed, once the baseline receiver is built.
+
 ## TODO/Feature list
 ### Rev 1
   - [ ] Power supply revamp, using low noise buck converters (10.5~30V input?)
@@ -59,3 +61,4 @@ Described in the the following document: [protocol specification](doc/proto.md)
 [^2]: [Récepteur Horaire France Inter](https://www.rvq.fr/tech/fi.php), Hervé QUILLEVERE
 [^3]: [Diffusion de l'heure par codage de la phase d'un émetteur de radiodiffusion à modulation d'amplitude](doc/l_onde_electrique_vol60_n10_1980.pdf), A. Gabry, L'onde électrique 1980, vol. 60, n°10
 [^4]: ["France Inter" - L'émetteur Français de fréquence étalon et de signaux de temps codé](doc/bulletin_bnm_no63-64_p120_1986.pdf), B. Dubouis, Bulletin BNM, n°63, 1986
+[^5]: [ALS162 Time Signal SDR Receiver for GNU Radio](https://pubs.gnuradio.org/index.php/grcon/article/view/134), Henning MAIER, Proceedings of the GNU Radio Conference, sep. 2023. [Associated slides](https://events.gnuradio.org/event/21/contributions/415/attachments/139/320/ALS162_slides_henningM1r.pdf)
