@@ -12,6 +12,7 @@ The default interface settings are 4,800 bps 8N1.
 A high speed mode is available. Its settings are 38,400 bps 8N1.
 
 A PPS signal, translated to RS-232 levels is provided on the DCD pin. The sync is provided on the rising edge (transition from mark to space).
+
 An alarm signal, translated to RS-232 levels, is provided on the DSR pin. The alarm signal is considered active when the line *IS NOT* asserted. More details are supplied by the TXT sentences.
 
 ## DCE-originated sentences
@@ -80,23 +81,29 @@ DCE_FRAME = %x24 DCE_TID ( DCE_MSS / DCE_TXT / DCE_ZDA ) DCE_CSUM CRLF
 
 ## DTE-originated sentences
 This section defines the format of messages that are sent by the time signal consumer to the time signal receiver.
+
 Those messages essentially cover settings.
 
 ### 101 Sentence: set receiver location
 This sentence is used to save the current receiver location. 
+
 Format is a pair of floating point values in decimal degrees, using the WGS84 datum, describing the latitude, followed by a semi-colon, then the longitude.
+
 Distance from the transmitter and associated propagation delay is computed by the time signal receiver firmware.
 
 ### 102 Sentence: Interface speed
-This sentence can be used to change serial port from standard (4,800bps) to high speed (38,400bps), and vice versa.
+This sentence can be used to change serial port from standard to high speed, and vice versa.
+
 The message payload contains the expected value, in ASCII decimal form.
+
 Before switching line speed, the time signal receiver sends a TXT sentence of type `05` to acknowledge the command.
 Value:
-  - `0`: Standard speed
-  - `1`: High speed
+  - `0`: Standard speed (4,800bps)
+  - `1`: High speed (38,400bps)
 
 ### 103 Sentence: Set Talker ID
 This sentence is used to switch the Talker ID value. 
+
 This is provided to improve compatibility with poorly developed clients.
   - `0`: Default Talker ID (`AL`) 
   - `1`: Compatible Talker ID (`GN`)
