@@ -52,3 +52,9 @@ Minor alarm
 ## Serial Protocol Specification
 
 Described in the the following document: [protocol specification](doc/proto.md)
+
+## Citations
+[^1]: [Construisez un récepteur de fréquence étalon et de signaux horaires sur France Inter 162kHz](doc/200103_signal_horaire_france_inter.pdf), F5RCT
+[^2]: [Récepteur Horaire France Inter](https://www.rvq.fr/tech/fi.php), Hervé QUILLEVERE
+[^3]: [Diffusion de l'heure par codage de la phase d'un émetteur de radiodiffusion à modulation d'amplitude](doc/l_onde_electrique_vol60_n10_1980.pdf), A. Gabry, L'onde électrique 1980, vol. 60, n°10
+[^4]: ["France Inter" - L'émetteur Français de fréquence étalon et de signaux de temps codé](doc/bulletin_bnm_no63-64_p120_1986.pdf), B. Dubouis, Bulletin BNM, n°63, 1986
