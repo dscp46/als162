@@ -62,7 +62,7 @@ DCE_CSUM = "*" 2*2HEXDIG
 
 DCE_HMS = 6*6DIGIT *1( "." *DIGIT)
 DCE_DAY = ( %x30-32 DIGIT / %x33 %x30-31 )
-DCE_MONTH = ( %x30 %x31-39 / %x32 %x30-32 )
+DCE_MONTH = ( %x30 %x31-39 / %x31 %x30-32 )
 DCE_YEAR = 4*4DIGIT
 DCE_TZ_OFFSET_HOUR = ( ["-"] %x30 DIGIT / %x31 %x30-34 / "-" %x31 %x30-32 )
 DCE_TZ_OFFSET_MIN = %x30-35 DIGIT
