@@ -3,7 +3,7 @@
 This project will refresh F5RCT's time signal receiver[^1], frequency standard, using the 162kHz French legal time signal[^3], [^4].
 Comments from Hervé QUILLEVERE[^2] have also been taken in account, during the development of this project.
 
-Henning Maier has written an interesting paper for GRcon23[^5]. In the associated presentation, the author [quickly covers the unspecified part of the signal](https://www.youtube.com/watch?v=tjkMXNVhhnU&t=126). On top of his remarks, that containing the current second number, it appears this part contains an equal amount of positive and negative phase symbols, such that the average phase stays near zero. Further work needed, once the baseline receiver is built.
+Henning Maier has written an interesting paper for GRcon23[^5]. In the associated presentation, the author [quickly covers the unspecified part of the signal](https://www.youtube.com/watch?v=tjkMXNVhhnU&t=126). On top of his remarks, it appears this part contains an equal amount of positive and negative phase symbols, such that the long-term average phase stays near zero. Further work needed, once the baseline receiver is built.
 
 ## TODO/Feature list
 ### Rev 1
