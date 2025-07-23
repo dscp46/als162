@@ -39,6 +39,11 @@ Minor alarm
   - Happens when the reference signal is lost
   - This condition can self-clear, once reception is restored, and a valid signal has been received.
 
+### Loss of primary power supply
+Major alarm
+  - Happens when the device runs on its internal battery.
+  - Self-clears on main power restoration.
+
 ### External reference loss (Rev 2)
 Minor alarm
   - Happens when no valid PPS signal is received
