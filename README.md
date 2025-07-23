@@ -1,6 +1,7 @@
 # ALS162 time signal receiver
 
 This project will refresh F5RCT's time signal receiver[^1], frequency standard, using the 162kHz French legal time signal[^3], [^4].
+Comments from Hervé QUILLEVERE[^2] have also been taken in account, during the development of this project.
 
 ## TODO/Feature list
 ### Rev 1
