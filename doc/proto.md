@@ -57,7 +57,7 @@ $ALTXT,04,04,03,1.PRIMARY PSU LOSS*CC
 This section defines the format of messages that are sent by the time signal consumer to the time signal receiver.
 Those messages essentially cover settings.
 
-### 101 Sentence: static receiver location
+### 101 Sentence: set receiver location
 This sentence is used to save the current receiver location. 
 Format is a pair of floating point values in decimal degrees, using the WGS84 datum, describing the latitude, followed by a semi-colon, then the longitude.
 Distance from the transmitter and associated propagation delay is computed by the time signal receiver firmware.
@@ -65,16 +65,35 @@ Distance from the transmitter and associated propagation delay is computed by th
 ### 102 Sentence: Interface speed
 This sentence can be used to change serial port from standard (4,800bps) to high speed (38,400bps), and vice versa.
 The message payload contains the expected value, in ASCII decimal form.
-Before switching speed, the time signal receiver sends a TXT sentenct of type `05` to acknowledge the valid command.
+Before switching line speed, the time signal receiver sends a TXT sentence of type `05` to acknowledge the command.
+Value:
+  - `0`: Standard speed
+  - `1`: High speed
 
-### 103 Sentence: Compatible mode
-This sentence is used to switched the Talker ID value. This is used to improve compatibility with poorly developed clients.
+### 103 Sentence: Set Talker ID
+This sentence is used to switch the Talker ID value. 
+This is provided to improve compatibility with poorly developed clients.
   - `0`: Default Talker ID (`AL`) 
   - `1`: Compatible Talker ID (`GN`)
   - `2`: Legacy Talker ID (`GP`)
 
+### Examples
+> [!WARNING]
+> TODO: Generate valid sentences
+
 ```text
-$PHOF101,lat_nmea;lon_nmea*CC
+$PHOF101,lat_nmea,lon_nmea*CC
 $PHOF102,bauds*CC
 $PHOF103,compatible_mode*CC
+```
+
+### ABNF Grammar
+```abnf
+DTE_LAT = ["-"] ( 1*2DIGIT / "1" ( %x30-37 DIGIT / "80" ) ) *1( "." 1*8DIGIT )
+DTE_LON = ["-"] ( 1*1DIGIT / %x30-38 DIGIT / "90" ) *1( "." 1*8DIGIT )
+DTE_SETLOC = "101," DTE_LAT "," DTE_LON
+DTE_SETBAUD = "102," ( "4800" / "38400" )
+DTE_SETTID = "103," %30-32
+DTE_CSUM = "*" 2*2HEXDIG
+DTE_FRAME = %x24 "PHOF" ( DTE_SETLOC / DTE_SETBAUD / DTE_SETTID ) DTE_CSUM CRLF
 ```
