@@ -52,7 +52,9 @@ $ALTXT,04,02,02,v1.0*CC
 $ALTXT,04,03,03,2.PLL UNLOCKED*CC
 $ALTXT,04,04,03,1.PRIMARY PSU LOSS*CC
 ```
-### ABNF Grammar
+
+### DCE ABNF Grammar
+
 ```abnf
 DCE_TID = ( "AL" / "GN" / "GP" )
 DCE_CSUM = "*" 2*2HEXDIG
@@ -61,7 +63,7 @@ DCE_HMS = 6*6DIGIT *1( "." *DIGIT)
 DCE_DAY = ( %x30-32 DIGIT / %x33 %x30-31 )
 DCE_MONTH = ( %x30 %x31-39 / %x32 %x30-32 )
 DCE_YEAR = 4*4DIGIT
-DCE_TZ_OFFSET_HOUR = ( ( ["-"] %x30 DIGIT / %x31 %x30-34 / "-" %x31 %x30-32 )
+DCE_TZ_OFFSET_HOUR = ( ["-"] %x30 DIGIT / %x31 %x30-34 / "-" %x31 %x30-32 )
 DCE_TZ_OFFSET_MIN = %x30-35 DIGIT
 DCE_ZDA = "ZDA," DCE_HMS "," DCE_DAY "," DCE_MONTH "," DCE_YEAR "," DCE_TZ_OFFSET_HOUR "," DCE_TZ_OFFSET_MIN
 
@@ -110,7 +112,7 @@ $PHOF102,bauds*CC
 $PHOF103,compatible_mode*CC
 ```
 
-### ABNF Grammar
+### DTE ABNF Grammar
 ```abnf
 DTE_LAT = ["-"] ( 1*2DIGIT / "1" ( %x30-37 DIGIT / "80" ) ) *1( "." 1*8DIGIT )
 DTE_LON = ["-"] ( 1*1DIGIT / %x30-38 DIGIT / "90" ) *1( "." 1*8DIGIT )
