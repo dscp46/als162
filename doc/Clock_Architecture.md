@@ -27,3 +27,8 @@ flowchart LR
 
     T1 --> PPS> 1PPS Out ]
 ```
+
+## Timer1 characteristics
+Timer1 is set to:
+  - Set OC1A High when it reaches `44999`.
+  - Set OC1A Low and reset timer1 when it reaches `49999`.
