@@ -6,6 +6,7 @@ Comments from Hervé QUILLEVERE[^2] have also been taken in account, during the 
 Henning Maier has written an interesting paper for GRcon23[^5]. In the associated presentation, the author [quickly covers the unspecified part of the signal](https://www.youtube.com/watch?v=tjkMXNVhhnU&t=126). On top of his remarks, it appears this part contains an equal amount of positive and negative phase symbols, such that the long-term average phase stays near zero. Further work needed, once the baseline receiver is built.
 
 ## System design documents
+  - [ALS162 Time Signal](doc/als162_waveform.md)
   - [Clock architecture](doc/Clock_Architecture.md)
   - [Serial Protocol Specification](doc/proto.md)
   - [Alarm conditions](doc/Alarms.md)
