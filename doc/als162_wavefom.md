@@ -6,7 +6,7 @@ The Allouis time signal, formerly used as France Inter's AM center carrier, is n
 
 The signal is phase modulated, and is composed as follow (original illustration comes from GRcon23 slideware[^1]):
 
-![ALS162 Waveform](doc/als162_waveform.png)
+![ALS162 Waveform](als162_waveform.png)
 
 The 1PPS event happens on the vertical marker, at the zero crossing on the falling edge, prior to the timecode bit time slot (colored in yellow).
 The green time slot is defined as the "quiet" time slot, and can be used to measure signal phase.
