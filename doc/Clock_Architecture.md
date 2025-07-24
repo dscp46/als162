@@ -20,7 +20,7 @@ flowchart LR
 
     subgraph ATMega328
     uC_CLK -->|10MHz| T2
-    uC[ µC code ] -->|Set tick| T2
+    uC[ µC code ] -->|Set tick| T1
     T2[ /200<br>Timer2 ] -->|50 kHz| T1[ Timer1 ]
     end
 
