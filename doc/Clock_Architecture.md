@@ -32,3 +32,10 @@ flowchart LR
 Timer1 is set to:
   - Set OC1A High when it reaches `44999`.
   - Set OC1A Low and reset timer1 when it reaches `49999`.
+
+## Sync modes
+### Rough sync
+Until the undocumented part content is reverse-engineed, a rough estimation of the 1PPS epoch is necessary.
+
+### Fine sync
+Once we're roughly synced, we can measure and store consecutive epochs (± a few samples), then adjust the epoch timer to mean value. More details to come.
