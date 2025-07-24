@@ -2,7 +2,7 @@
 > [!WARNING]
 > This document is in construction. Accuracy of its content is not guaranteed.
 
-The Allouis time signal, formerly used as France Inter's AM center carrier, is now broadcasted as a standalone signal.
+The Allouis time signal, formerly used as France Inter's AM center carrier, is now broadcasted as a standalone signal. It is defined by [NF C90-002:1988-08-01](https://www.boutique.afnor.org/fr-fr/norme/nf-c90002/radiodiffusion-et-telecommunication-systeme-de-diffusion-de-donnees-compati/fa034344/5651).
 
 The signal is phase modulated, and is composed as follow (original illustration comes from GRcon23 slideware[^1]):
 
