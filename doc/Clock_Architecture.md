@@ -1,5 +1,6 @@
 # Clock architecture
 Using the ATMega328, it is possible to accurately generate the 1PPS signal, by exclusively relying on hardware and timers.
+The 50kHz signal is transfered from `timer2` to `timer1` though a connection of `OSC2A` (PortB_3) to `T1` (PortD_5).
 
 The firmware is left the task to adjust the 1PPS event timing and time signal management.
 
