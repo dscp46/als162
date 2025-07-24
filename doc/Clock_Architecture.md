@@ -16,7 +16,7 @@ flowchart LR
     D125 -->|160 kHz| D80[ /80<br>74HC390+3 ]
     D80 -->|2kHz| PLL
     PLL -->|Δφ| CLK
-    PLL -->|Δf| uC
+    PLL -->|Δf, PLL_LOCK| uC
 
     subgraph ATMega328
     uC_CLK -->|10MHz| T2
