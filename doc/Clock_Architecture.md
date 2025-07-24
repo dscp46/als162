@@ -36,6 +36,9 @@ Timer1 is set to:
 ## Sync modes
 ### Rough sync
 Until the undocumented part content is reverse-engineed, a rough estimation of the 1PPS epoch is necessary.
+Easiest way to do this is to rely on the 59th second, which is known to be unmodulated.
+
+To do this, we measure the time to last interrupt. The first interrupt for which $`Δt > 500ms`$ is a good marker to set the epoch (don't forget to add the 50ms delay). 
 
 ### Fine sync
 Once we're roughly synced, we can measure and store consecutive epochs (± a few samples), then adjust the epoch timer to mean value. More details to come.
