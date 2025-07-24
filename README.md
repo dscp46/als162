@@ -5,6 +5,11 @@ Comments from Hervé QUILLEVERE[^2] have also been taken in account, during the 
 
 Henning Maier has written an interesting paper for GRcon23[^5]. In the associated presentation, the author [quickly covers the unspecified part of the signal](https://www.youtube.com/watch?v=tjkMXNVhhnU&t=126). On top of his remarks, it appears this part contains an equal amount of positive and negative phase symbols, such that the long-term average phase stays near zero. Further work needed, once the baseline receiver is built.
 
+## System design documents
+  - [Clock architecture](doc/Clock_Architecture.md)
+  - [Serial Protocol Specification](doc/proto.md)
+  - [Alarm conditions](doc/alarms.md)
+
 ## TODO/Feature list
 ### Rev 1
   - [ ] Power supply revamp, using low noise buck converters (10.5~30V input?)
@@ -29,32 +34,6 @@ Nice to haves
   - [ ] Modular frequency generator?
   - [ ] GNSS receiver Add-in card? / Ext GPSDO input (PPS+NMEA)?
   - [ ] PPS shift auto-adjust based on ext PPS
-
-## Alarm conditions
-### Loss of continuous operation
-Critical severity
-  - Happens when the internal clock loses its power supply.
-  - This condition can self-clear, once the built-in clock has completed its warmup phase, PPS has locked, and a valid signal is received.
-  - On Rev 2, continuous operation condition can be restored from the external GNSS source (jumpstart).
-
-### PLL Unlock
-Minor severity
-  - Happens when the reference signal is lost
-  - This condition can self-clear, once reception is restored, and a valid signal has been received.
-
-### Loss of primary power supply
-Major severity
-  - Happens when the device runs on its internal battery.
-  - Self-clears on main power restoration.
-
-### External reference loss (Rev 2)
-Minor severity
-  - Happens when no valid PPS signal is received
-  - This condition can self-clear once continuous operation has been established.
-
-## Serial Protocol Specification
-
-Described in the the following document: [protocol specification](doc/proto.md)
 
 ## Citations
 [^1]: [Construisez un récepteur de fréquence étalon et de signaux horaires sur France Inter 162kHz](doc/200103_signal_horaire_france_inter.pdf), F5RCT
