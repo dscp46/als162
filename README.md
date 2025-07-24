@@ -8,7 +8,7 @@ Henning Maier has written an interesting paper for GRcon23[^5]. In the associate
 ## System design documents
   - [Clock architecture](doc/Clock_Architecture.md)
   - [Serial Protocol Specification](doc/proto.md)
-  - [Alarm conditions](doc/alarms.md)
+  - [Alarm conditions](doc/Alarms.md)
 
 ## TODO/Feature list
 ### Rev 1
