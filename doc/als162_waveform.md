@@ -13,8 +13,8 @@ The signal is phase modulated, and is composed as follow (original illustration 
   - The 1PPS event happens on the vertical marker, at the zero crossing on the falling edge, prior to the timecode bit time slot (colored in yellow).
   - The green time slot is defined as the "quiet" time slot, and can be used to measure signal phase.
   - The 250~900ms slot contains a 3-state signal, which content isn't currently documented. Its notable characteristic, so far, is the number of `+π rad` and `-π rad` symbols are kept equal, to keep the long term phase average centered around zero radian.
-  - Leap seconds are inserted on the 0th second.
-  - Leap seconds are removed on the 59th second.
+  - Leap seconds are inserted on the 14th second.
+  - Leap seconds are removed ~~on the 59th second~~.
 
 ## Timecode
 > [!NOTE]
