@@ -43,7 +43,7 @@ To do this, we measure the time to last interrupt. The first interrupt for which
 ### Fine sync
 Once we're roughly synced, we can measure and store consecutive epochs (± a few samples), then adjust the epoch timer to mean value. More details to come.
 
-### Propagation delay compensation
+## Propagation delay compensation
 Compute the distance from your point of installation to `47.171585, 2.204646`. 
 
 No need to get an up-to-the-meter precise location: the coordinates is the middle point between the two transmitting masts (1 being the active one, and the other being a reflector), which introduces a +/- 230 meters uncertainty (767ns), which is negligible, when compared to the epoch average uncertainty (~30µs/d according to Bulletin H[^1]).
