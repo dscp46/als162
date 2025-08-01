@@ -1,6 +1,8 @@
 # Clock architecture
-Using the ATMega328, it is possible to accurately generate the 1PPS signal, by exclusively relying on hardware and timers.
-The 50kHz signal is transfered from `timer2` to `timer1` though a connection of `OSC2A` (PortB_3) to `T1` (PortD_5).
+Using the ~~ATMega328~~ATMega2560, it is possible to accurately generate the 1PPS signal, by exclusively relying on hardware and timers.
+A 50kHz signal is generated using `timer4`, based on the supplied 10 MHz clock. The 50kHz signal is transfered from `timer4` to `timer1` though a connection of ~~`OSC2A` (PortB_3)~~ to `T5` (~~PortD_5~~).
+
+Initially, it was planned to do this with an ATMega328(P), but it appeared the 8 bit counters can't flip their output on a match to both OCRxB and OCRxA. Technically, we could rely on `timer2` to generate the 50kHz output on ATMega328, but this imply the counter *will* roll over once while timer1 stays the same, which is not acceptable in our case, since we want to timestamp time signal transitions beyond what a single 16-bit counter is able to track.
 
 The firmware is left the task to adjust the 1PPS event timing and time signal management.
 
@@ -19,19 +21,19 @@ flowchart LR
     PLL -->|Δφ| CLK
     PLL -->|Δf, PLL_LOCK| uC
 
-    subgraph ATMega328
-    uC_CLK -->|10MHz| T2
-    uC[ µC code ] -->|Set tick| T1
-    T2[ /200<br>Timer2 ] -->|50 kHz| T1[ /50k<br>Timer1 ]
+    subgraph ATMega2560
+    uC_CLK -->|10MHz| T4
+    uC[ µC code ] -->|Set tick| T5
+    T4[ /200<br>Timer4 ] -->|50 kHz| T5[ /50k<br>Timer5 ]
     end
 
-    T1 --> PPS> 1PPS Out ]
+    T5 --> PPS> 1PPS Out ]
 ```
 
-## Timer1 characteristics
-Timer1 is set to:
-  - Set OC1A High when it reaches `44999`.
-  - Set OC1A Low and reset timer1 when it reaches `49999`.
+## Timer5 characteristics
+Timer5 is set to:
+  - Set OC5A High when it reaches `44999`.
+  - Set OC5A Low and reset timer5 when it reaches `49999`.
 
 ## Sync modes
 ### Rough sync
