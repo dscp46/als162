@@ -36,6 +36,25 @@ IDs:
 03 -> Alarms ( 1 => Critical, 2 => Major, 3 => Minor, 4 => Warning) (L.text)
 04 -> PPS Propagation compensation (N => Not active, U => User-supplied value, E => Determined by external GNSSDO reference), stored value? #TODO
 05 -> Answer to host commands (ACK|NAK)
+06 -> In-band service message (ASCIIhex encoded)
+```
+
+#### In-band service message
+This receiver both decodes the time signal and the service messages that are eventually sent out.
+
+Messages are encoded into ASCII hexadecimal form.
+
+Due to peculiarities of the message format, adresses are zero-padded on the left, and the CRC is zero-padded on the right:
+```mermaid
+---
+title: "In-band Service Message"
+---
+packet-beta
+  0-2: "Zero"
+  3-7: "Address"
+  8-39: "Data"
+  40-52: "Checksum"
+  53-55: "Zero"
 ```
 
 ### ZDA Sentence
