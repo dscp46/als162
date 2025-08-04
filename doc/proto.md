@@ -27,7 +27,7 @@ This sentence almost follows the standard NMEA sentence format
 ```
 $ALTXT,NB,SQ,ID,text*CC
        ^---------- Number of messages (01-99)
-	        ^------- Sequence ID of current message (01-99)
+          ^------- Sequence ID of current message (01-99)
              ^---- Message type (00-99)
                 ^- Payload (61 characters max)
 IDs: 
