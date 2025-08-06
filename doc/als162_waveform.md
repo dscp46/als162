@@ -12,6 +12,8 @@ The states will be defined as:
   - `P`: `+π rad` ahead of carrier.
   - `N`: `-π rad` behind carrier.
 
+The slew rate is $` \pm 40π\ rad.s^{-1}`$ when transitionning between the `0` and `P`/`N` states (and vice-versa), and $` \pm 80π\ rad.s^{-1}`$ when transitionning between the `P` and `N` states (and vice versa).
+
 Transitions are described as following:
 | Transition | Current symbol | Next symbol |
 | :-: | :-: | :-: |
