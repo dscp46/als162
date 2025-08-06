@@ -16,7 +16,7 @@ TCM Symbols : 0000 0P0N 0000 000P PNN0 0PPN 00NP 00P0 N0PN 0PNN 0000 0P0N 0000
 Epoch       :        !                                                 !
 CTR overflow:      !                                                 !        
 Transitions : X111 5723 1111 1159 8431 5983 1267 1572 3583 5843 1111 5723 111x
-Frame bits	: 0000 1000 0000 0011 0000 1101 0010 1110 1101 1000 0000 1000 000x
+Frame bits  : 0000 1000 0000 0011 0000 1101 0010 1110 1101 1000 0000 1000 000x
 ```
 
 ## Waveform characteristics
