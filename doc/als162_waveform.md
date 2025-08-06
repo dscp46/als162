@@ -41,7 +41,7 @@ Frame bits  : 0000 1000 0000 0011 0000 1101 0010 1110 1101 1000 0000 1000 000x
 ```
 
 ### Symbol sync strategy
-  - Most efficient: Use a derivative sign reversal to set the symbol decoding time.
+So far, over-sample the signal, then find a derivative sign reversal to set the symbol decoding time.
 
 ## Layer 2: The second-long frame
 
